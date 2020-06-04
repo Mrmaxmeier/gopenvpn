@@ -8,9 +8,9 @@
                 <description>Starts an OpenVPN session</description>
                 <message>OpenVPN needs permission to start</message>
                 <defaults>
-                        <allow_any>no</allow_any>
-                        <allow_inactive>no</allow_inactive>
-                        <allow_active>auth_self_keep</allow_active>
+                        <allow_any>yes</allow_any>
+                        <allow_inactive>yes</allow_inactive>
+                        <allow_active>yes</allow_active>
                 </defaults>
 		<annotate key="org.freedesktop.policykit.exec.path">/usr/sbin/openvpn</annotate>
         </action>

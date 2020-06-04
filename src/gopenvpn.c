@@ -39,7 +39,7 @@
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
 #include <glade/glade.h>
-#include <gnome-keyring.h>
+/* #include <gnome-keyring.h> */
 
 #include "gettext.h"
 #include "gopenvpn.h"
@@ -157,6 +157,8 @@ gboolean get_keyring(const char *config_name,
 					 char **username,
 					 char **passphrase)
 {
+	return FALSE;
+	/*
 	GnomeKeyringResult ret;
 	GList* found_list = NULL;
 	GnomeKeyringFound *found;
@@ -190,12 +192,14 @@ gboolean get_keyring(const char *config_name,
 	g_strfreev(fields);
 
 	return TRUE;
+	*/
 }
 	
 void set_keyring(const char *config_name,
 				 const char *username,
 				 const char *passphrase)
 {
+	/*
 	GnomeKeyringResult ret;
 	GnomeKeyringAttribute attr;
 	GnomeKeyringAttributeList *attributes;
@@ -224,6 +228,7 @@ void set_keyring(const char *config_name,
 	
 	gnome_keyring_attribute_list_free(attributes);
 	g_free(display_name);
+	*/
 }
 	
 /*
@@ -1350,8 +1355,8 @@ void vpn_applet_init_configs(VPNApplet *applet)
 	glob_t gl;
 	int i;
 	
-	glob("/etc/openvpn/*.conf", 0, NULL, &gl);
-	glob("/etc/openvpn/*.ovpn", GLOB_APPEND, NULL, &gl);	
+	glob("/etc/openvpn/client/*.conf", 0, NULL, &gl);
+	glob("/etc/openvpn/client/*.ovpn", GLOB_APPEND, NULL, &gl);
 
 	applet->configs_count = gl.gl_pathc;
 	

@@ -27,6 +27,6 @@
 
 #define GLADE_FILE         "gopenvpn.glade"
 
-#define CONFIG_PATH        "/etc/openvpn"
+#define CONFIG_PATH        "/etc/openvpn/client"
 
 #define MAX_RETRY          10
