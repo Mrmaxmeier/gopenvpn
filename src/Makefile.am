@@ -11,7 +11,7 @@ gopenvpn_LDADD = $(GTK_LIBS)	\
 	$(GNOME_KEYRING_LIBS)	\
 	$(X11_LIBS)
 
-AM_CFLAGS = -Wall -ansi -pedantic		\
+AM_CFLAGS = -Wall -ansi -Wno-deprecated-declarations \
 	$(GLADE_CFLAGS)				\
 	$(GNOME_KEYRING_CFLAGS)			\
 	$(GTK_CFLAGS)				\
